@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add</title>
+</head>
+<body>
+<h1>Add</h1>
+<form th:action="@{/books/create}" method="post">
+    <label>Title</label>
+    <p><input type="text" th:field="${book.title}"></p>
+    <label>Description</label>
+    <p><input type="text" th:field="${book.description}"></p>
+
+    <select th:field="${book.person.id}">
+        <option th:each="p : ${people}" th:value="${p.id}" th:text="${p}"></option>
+    </select>
+
+    <p><input type="submit" value="Add"/></p>
+</form>
+
+</body>
+</html>

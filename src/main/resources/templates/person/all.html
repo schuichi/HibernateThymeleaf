@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All</title>
+</head>
+<body>
+<h1>All</h1>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Delete</th>
+    </tr>
+    <tr th:each="person : ${people}">
+        <td th:text="${person.name}"/>
+        <td th:text="${person.surname}"/>
+        <td>
+            <a th:href="@{/person/{id}(id=${person.id})}" data-method="delete">
+                <span>Delete</span>
+            </a>
+        </td>
+
+
+    </tr>
+
+</table>
+
+</body>
+</html>
